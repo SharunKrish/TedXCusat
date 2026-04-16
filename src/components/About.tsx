@@ -28,18 +28,18 @@ export default function About() {
           {/* Right panel (Stats + Image) */}
           <div className="flex flex-col">
             <motion.div 
-              initial={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
-              whileInView={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}
-              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               viewport={{ once: true, margin: "-100px" }}
-              className="h-72 relative overflow-hidden border-b border-dark-gray filter grayscale hover:grayscale-0 transition-all duration-700"
+              className="h-72 relative overflow-hidden border-b border-dark-gray bg-dark-gray filter grayscale hover:grayscale-0 transition-all duration-700"
             >
                <motion.img 
-                  initial={{ scale: 1.2 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                   viewport={{ once: true, margin: "-100px" }}
-                src="/images/about-stage.jpg" 
+                  src="/images/about-stage.jpg" 
                   alt="TEDx Event Stage" 
                   className="w-full h-full object-cover" 
                />
