@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Anton", sans-serif;
+  
+  --color-ted-red: #eb0028;
+  --color-ted-black: #000000;
+  --color-dark-gray: #1a1a1a;
+  --color-text-muted: #999999;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white font-sans selection:bg-ted-red selection:text-white;
+  }
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1.5px currentColor;
+  color: transparent;
+}
+
+.hero-title {
+  @apply text-[96px] md:text-[140px] lg:text-[180px] leading-[0.85] font-extrabold tracking-[-0.04em];
+}
+
+.speaker-x::before {
+  content: 'X';
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  font-size: 140px;
+  line-height: 1;
+  color: rgba(235, 0, 40, 0.05);
+  font-weight: 900;
+  transition: color 0.5s ease, transform 0.5s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.group:hover .speaker-x::before {
+  color: rgba(235, 0, 40, 0.2);
+  transform: scale(1.1) rotate(5deg);
+}
+
+.bg-noise {
+  position: relative;
+}
+
+.bg-noise::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
