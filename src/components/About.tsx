@@ -1,6 +1,37 @@
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
 export default function About() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const updateIsMobile = () => setIsMobile(mediaQuery.matches);
+
+    updateIsMobile();
+    mediaQuery.addEventListener("change", updateIsMobile);
+
+    return () => mediaQuery.removeEventListener("change", updateIsMobile);
+  }, []);
+
+  const imageContainerMotionProps = isMobile
+    ? {}
+    : {
+        initial: { opacity: 0, y: 20 },
+        whileInView: { opacity: 1, y: 0 },
+        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+        viewport: { once: true, margin: "-100px" },
+      };
+
+  const imageMotionProps = isMobile
+    ? {}
+    : {
+        initial: { opacity: 0, scale: 1.05 },
+        whileInView: { opacity: 1, scale: 1 },
+        transition: { duration: 1, ease: [0.16, 1, 0.3, 1] },
+        viewport: { once: true, margin: "-100px" },
+      };
+
   return (
     <section id="about" className="bg-black py-24 px-10 border-b border-dark-gray overflow-hidden">
       <div className="container mx-auto">
@@ -27,23 +58,25 @@ export default function About() {
           
           {/* Right panel (Stats + Image) */}
           <div className="flex flex-col">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              viewport={{ once: true, margin: "-100px" }}
-              className="h-72 relative overflow-hidden border-b border-dark-gray bg-dark-gray filter grayscale hover:grayscale-0 transition-all duration-700"
+            <motion.div
+              {...imageContainerMotionProps}
+              className={`h-72 relative overflow-hidden border-b border-dark-gray bg-dark-gray ${
+                isMobile
+                  ? ""
+                  : "filter grayscale hover:grayscale-0 transition-all duration-700"
+              }`}
             >
-               <motion.img 
-                  initial={{ opacity: 0, scale: 1.05 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  src="/images/about-stage.jpg" 
-                  alt="TEDx Event Stage" 
-                  className="w-full h-full object-cover" 
+               <motion.img
+                  {...imageMotionProps}
+                  src="/images/about-stage.jpg"
+                  alt="TEDx Event Stage"
+                  className="w-full h-full object-cover"
                />
-               <div className="absolute inset-0 bg-ted-red/20 mix-blend-multiply" />
+               <div
+                 className={`absolute inset-0 ${
+                   isMobile ? "hidden" : "bg-ted-red/20 mix-blend-multiply"
+                 }`}
+               />
             </motion.div>
             
             <div className="grid grid-cols-2 flex-grow">
