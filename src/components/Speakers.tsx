@@ -39,7 +39,6 @@ export default function Speakers() {
                 src={speaker.image}
                 alt={speaker.name}
                 className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity group-hover:opacity-80 group-hover:mix-blend-normal group-hover:scale-105 transition-all duration-700"
-                referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90 group-hover:opacity-60 transition-all duration-500" />
               

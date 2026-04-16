@@ -39,10 +39,9 @@ export default function About() {
                   whileInView={{ scale: 1 }}
                   transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
                   viewport={{ once: true, margin: "-100px" }}
-                  src="https://news.mst.edu/files/2025/09/20241030-TEDx-75.jpg" 
+                src="/images/about-stage.jpg" 
                   alt="TEDx Event Stage" 
                   className="w-full h-full object-cover" 
-                  referrerPolicy="no-referrer" 
                />
                <div className="absolute inset-0 bg-ted-red/20 mix-blend-multiply" />
             </motion.div>

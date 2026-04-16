@@ -23,7 +23,7 @@
 }
 
 .hero-title {
-  @apply text-[96px] md:text-[140px] lg:text-[180px] leading-[0.85] font-extrabold tracking-[-0.04em];
+  @apply text-[clamp(2.4rem,13vw,6rem)] md:text-[140px] lg:text-[180px] leading-[0.9] font-extrabold tracking-[-0.03em];
 }
 
 .speaker-x::before {

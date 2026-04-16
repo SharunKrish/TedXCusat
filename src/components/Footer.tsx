@@ -8,10 +8,9 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center mb-8">
               <img 
-                src="https://tedxcusat.in/logo-white.png" 
+                src="/images/logo-white.png" 
                 alt="TEDxCUSAT Logo" 
-                className="object-contain h-[40px] md:h-[48px]" 
-                referrerPolicy="no-referrer"
+                className="object-contain h-[40px] md:h-[48px]"
               />
             </div>
             <p className="text-text-muted text-[15px] max-w-sm mb-10 leading-relaxed">

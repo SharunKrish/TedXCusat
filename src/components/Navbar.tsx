@@ -29,10 +29,9 @@ export default function Navbar() {
       <div className="container mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center">
           <img 
-            src="https://tedxcusat.in/logo-white.png" 
+            src="/images/logo-white.png" 
             alt="TEDxCUSAT Logo" 
-            className="object-contain h-[32px] md:h-[40px]" 
-            referrerPolicy="no-referrer"
+            className="object-contain h-[32px] md:h-[40px]"
           />
         </div>
 

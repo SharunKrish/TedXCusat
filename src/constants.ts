@@ -5,7 +5,7 @@ export interface Speaker {
   image: string;
 }
 
-const BLANK_PROFILE_PIC = "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png";
+const BLANK_PROFILE_PIC = "/images/speaker-placeholder.png";
 
 export const SPEAKERS: Speaker[] = [
   {

@@ -1,6 +1,5 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
-import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -68,7 +67,7 @@ export default function Hero() {
         X
       </motion.div>
 
-      <div className="container mx-auto px-10 relative z-10 w-full flex flex-col justify-center">
+      <div className="container mx-auto px-5 sm:px-10 relative z-10 w-full flex flex-col justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 items-end">
           <motion.div
             initial="hidden"
@@ -77,7 +76,7 @@ export default function Hero() {
               visible: { transition: { staggerChildren: 0.15, delayChildren: 0.2 } }
             }}
           >
-            <div className="overflow-hidden pb-2 mb-[-12px]">
+            <div className="overflow-hidden pb-2 mb-[-6px] md:mb-[-12px]">
               <motion.h1 variants={lineVariants} className="hero-title text-white uppercase block">
                 IDEAS WORTH
               </motion.h1>
@@ -134,7 +133,7 @@ export default function Hero() {
         >
           <a
             href="#tickets"
-            className="inline-block bg-ted-red text-white text-[13px] font-black uppercase tracking-[0.2em] px-14 py-6 hover:bg-white hover:text-black transition-all"
+            className="inline-block bg-ted-red text-white text-[11px] sm:text-[13px] font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] px-8 sm:px-14 py-4 sm:py-6 hover:bg-white hover:text-black transition-all"
           >
             Get Your Tickets Now
           </a>
